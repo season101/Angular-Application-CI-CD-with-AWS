@@ -1,0 +1,26 @@
+version: 0.2
+env:
+    variables:
+        BUILD_FOLDER: "build"
+phases:
+    install:
+      runtime-versions:
+        nodejs: 18
+    pre_build:
+      commands:
+          - echo Installing source NPM dependencies...
+          - npm install --force
+          - npm install -g @angular/cli
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build --configuration production
+    post_build:
+         commands:
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - 'dist/**/*'
+        - appspec.yml
+        - 'scripts/**'
+        - nginx.conf

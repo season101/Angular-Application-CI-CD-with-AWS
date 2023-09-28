@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /dist/angular-application-cicd/
+    destination: /var/www/html/angular
+  - source: nginx.conf
+    destination: /etc/nginx/
+file_exists_behavior: OVERWRITE
+hooks:  
+  ApplicationStop:
+    - location: scripts/applicationstop.sh
+      runas: root
+  AfterInstall:
+    - location: scripts/afterinstall.sh
+      runas: root
+  
