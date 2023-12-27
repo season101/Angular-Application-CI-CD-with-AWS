@@ -1,7 +1,6 @@
 # Angular Frontend CI/CD
 
 # Table of Content
-<!-- TOC -->108593
 
 - [Angular Frontend CI/CD](#angular-frontend-cicd)
 - [Table of Content](#table-of-content)
